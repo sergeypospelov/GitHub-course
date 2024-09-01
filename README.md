@@ -108,6 +108,14 @@ git status
   git push --set-upstream origin main
   ```
 
+### Получение новых коммитов из репозитория
+
+* С помощью web-интерфейса изменим `README.md`
+* Получим изменения с удалённого репозитория:
+  ```bash
+  git pull --rebase origin 
+  ```
+
 ### Полезная информация
 
 #### Help
