@@ -105,8 +105,23 @@ git status
   ```
 * Запушим наши коммиты:
   ```bash
+  git push
+  ```
+* Попробуем ещё раз
+  ```bash
   git push --set-upstream origin main
   ```
+* Сделаем ещё какой-нибудь коммит и запушим его:
+  ```bash
+  git push
+  ```
+  Как можно заметить, делать `git push --set-upstream origin main` не понадобилось.
+
+### Чуть подробнее про коммиты
+
+A commit is a snapshot in time. Each commit contains a pointer to its root tree, representing the state of the working directory at that time. The commit has a list of parent commits corresponding to the previous snapshots. A commit with no parents is a root commit and a commit with multiple parents is a merge commit. 
+
+# TODO
 
 ### Получение новых коммитов из репозитория
 
@@ -120,11 +135,10 @@ git status
 
 #### Help
 
-К любой команде можно добваить `--help` для вывода справки по этой команде
+К любой команде можно добваить `--help` для вывода справки по этой команде:
 ```bash
 git add --help
 git commit --help
 git checkout --help
 git pull --help
 ```
-
