@@ -126,9 +126,19 @@ A commit is a snapshot in time. Each commit contains a pointer to its root tree,
 ### Получение новых коммитов из репозитория
 
 * С помощью web-интерфейса изменим `README.md`
+* Посмотрим на состояние репозитория до получения коммита:
+  ```bash
+  git log
+  git status
+  ```
 * Получим изменения с удалённого репозитория:
   ```bash
   git pull --rebase origin 
+  ```
+* Посмотрим состояние репозитория сейчас:
+  ```bash
+  git log
+  git status
   ```
 
 ### Полезная информация
