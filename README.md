@@ -117,12 +117,6 @@ git status
   ```
   Как можно заметить, делать `git push --set-upstream origin main` не понадобилось.
 
-### Чуть подробнее про коммиты
-
-A commit is a snapshot in time. Each commit contains a pointer to its root tree, representing the state of the working directory at that time. The commit has a list of parent commits corresponding to the previous snapshots. A commit with no parents is a root commit and a commit with multiple parents is a merge commit. 
-
-# TODO
-
 ### Получение новых коммитов из репозитория
 
 * С помощью web-интерфейса изменим `README.md`
@@ -141,7 +135,71 @@ A commit is a snapshot in time. Each commit contains a pointer to its root tree,
   git status
   ```
 
+### Коммиты и ветки
+
+TODO
+
+A commit is a snapshot in time. Each commit contains a pointer to its root tree, representing the state of the working directory at that time. The commit has a list of parent commits corresponding to the previous snapshots. A commit with no parents is a root commit and a commit with multiple parents is a merge commit. 
+
+#### Ветки
+
+TODO
+
+### Создание веток
+
+TODO
+
+### Интерактивчик
+
+Давайте попробуем вместе попушить в репозиторий, посмотрим что получится :)
+
+TODO
+
+git push -f
+
+TODO
+
+Закрыть ветку на пуш
+
+### Merge конфликт
+
+### Best practices
+
+#### Conventional commits
+
+TODO
+
+#### Feature branches
+
+No merge commits!
+
+TODO
+
+TODO
+
+### Для чего можно использовать Git уже сегодня?
+
+* Home page
+* Хранение алгосиков из спортпроги
+* Хранение посылок по задачам и условий задач
+* Хранение CV
+* Хранение pet-проджектов
+* Хранение всякой инфы про учёбу
+
+### Вторая часть курса
+
+Плюшки GitHub:
+* Pull Requests
+* GitHub Actions
+* Issues
+* Discussions
+* etc.
+
 ### Полезная информация
+
+#### UI клиенты
+
+TODO
 
 #### Help
 
