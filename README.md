@@ -137,9 +137,17 @@ git status
 
 ### Коммиты и ветки
 
-TODO
+Коммит -- это просто снапшот репозитория в определённый момент времени. В коммите помимо (указателя на дерево файлов) также содержится:
+  * HASH коммита
+  * Ссылка на предыдущий коммит (или несколько ссылок)
+    * Если нет родителей -- root коммит
+    * Если несколько -- merge коммит
+  * Автор, коммитер
+  * Комментарий
+  * Дата
 
-A commit is a snapshot in time. Each commit contains a pointer to its root tree, representing the state of the working directory at that time. The commit has a list of parent commits corresponding to the previous snapshots. A commit with no parents is a root commit and a commit with multiple parents is a merge commit. 
+Всё это можно подменить, но хэш изменится.
+
 
 #### Ветки
 
@@ -147,35 +155,100 @@ TODO
 
 ### Создание веток
 
-TODO
+```bash
+git branch sergey/my-branch
+git checkout sergey/my-branch
+```
+
+```bash
+git bas
+```
+
+
+```git bash
+git switch -c 
+```
 
 ### Интерактивчик
 
 Давайте попробуем вместе попушить в репозиторий, посмотрим что получится :)
 
-TODO
+1. Создадим общий репозиторий:
+   * Добавим файлик
+   ```bash
+   cat "Sergey" > name.txt
+   ``` 
+2. Склонируем локально:
+  ```bash
+  git clone https://github.com/sergeypospelov/common-repo
+  ```
+3. Добавьте в файлик своё имя локально, сделайте коммит и сделайте push:
+   ```bash
+   git commit -am "docs: add <ваше_имя>"   
+   ```
+   ```bash
+   git push
+   ```
+4. Получается гонка данных, нужно делать rebase:
+    ```bash
+    git pull --rebase
+    ```
 
+Либо железобетонный метод:
+
+```bash
 git push -f
-
-TODO
-
-Закрыть ветку на пуш
+```
+Но обычно от этого есть защита:
+  * Закрыть ветку на пуш
 
 ### Merge конфликт
 
+Возникает, когда ваши изменения 
+
 ### Best practices
 
-#### Conventional commits
+Если не следовать каким-то договоренностям, то совместная разработка может превратиться в боль.
 
-TODO
+#### Linear history
+
+В главной ветке (main или master) нужно избегать коммитов, у которых больше одного родителя! То есть главная ветка должна выглядет линейно.
+
+Для этого, перед тем как добавлять новую функциональность, нужно склеить свои коммиты:
+```
+git reset --soft HEAD~3
+git status
+git commit
+```
+
+После этого нужно сделать.
+
+```bash
+git pull --rebase
+```
+
+После этого, нужно за
+
+Таким образом, коммиты из удаленного репозитория накинуться на вашу ветку, и сверху них накинутся один ваш склееный коммит.
 
 #### Feature branches
 
+Когда разработчики работает над одной фичой, затрагивающей общую функциональность, они создают
+
 No merge commits!
 
-TODO
+![git-flow](imgs/git_flow.png)
 
-TODO
+
+#### Conventional commits
+
+Нужно правильно именовать коммиты:
+
+- fix: a commit of the type fix patches a bug in your codebase
+- feat: a commit of the type feat introduces a new feature to the codebase
+- BREAKING CHANGE
+- build:, chore:, ci:, docs:, style:, refactor:, perf:, test:
+
 
 ### Для чего можно использовать Git уже сегодня?
 
@@ -197,9 +270,22 @@ TODO
 
 ### Полезная информация
 
+#### Ссылки
+
+* https://www.conventionalcommits.org/en/v1.0.0/
+
+#### Ещё команды
+```bash
+git diff
+git log --graph --pretty=oneline --abbrev-commit
+```
+
 #### UI клиенты
 
-TODO
+* Git Client
+* Sublime Merge
+* Etc.
+* Intellij Idea
 
 #### Help
 
